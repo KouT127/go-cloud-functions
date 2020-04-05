@@ -2,7 +2,6 @@ package image
 
 import (
 	"encoding/json"
-	"github.com/KouT127/go-cloud-functions/module"
 	"google.golang.org/api/option"
 	"log"
 	"net/http"
@@ -17,7 +16,7 @@ func init() {
 	apiKey = os.Getenv("API_KEY")
 }
 
-func UploadHandler(writer http.ResponseWriter, request *http.Request) {
+func Upload(writer http.ResponseWriter, request *http.Request) {
 	file, header, err := request.FormFile("file")
 	if err != nil {
 		log.Printf("%s", err.Error())
@@ -25,7 +24,7 @@ func UploadHandler(writer http.ResponseWriter, request *http.Request) {
 		return
 	}
 
-	client, err := module.NewStorageClient(option.WithAPIKey(apiKey))
+	client, err := NewStorageClient(option.WithAPIKey(apiKey))
 	if err != nil {
 		log.Printf("%s", err.Error())
 		writer.WriteHeader(http.StatusBadRequest)

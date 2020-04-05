@@ -5,7 +5,9 @@
 *.so
 *.dylib
 *.json
+*.sum
 .env.yaml
+
 
 # Test binary, built with `go test -c`
 *.test
@@ -14,4 +16,4 @@
 *.out
 
 # Dependency directories (remove the comment below to include it)
-# vendor/
+vendor/

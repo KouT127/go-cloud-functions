@@ -1,4 +1,4 @@
-module github.com/KouT127/go-cloud-functions
+module github.com/KouT127/go-cloud-functions/image
 
 go 1.13
 

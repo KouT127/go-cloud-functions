@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/health", health.CheckHandler)
+	http.HandleFunc("/", health.Check)
 	http.HandleFunc("/images/upload", image.UploadHandler)
 	port := os.Getenv("PORT")
 	if port == "" {

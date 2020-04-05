@@ -1,4 +1,4 @@
-package module
+package image
 
 import (
 	"cloud.google.com/go/storage"
